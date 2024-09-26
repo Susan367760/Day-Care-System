@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Happy Kids Daycare</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Happy Kids Daycare</h1>
+        <h2>Please choose an option</h2>
+        <form>
+            <button type="button" class="btn" onclick="location.href='{% url 'register_child' %}'">Register a Child</button>
+            <button type="button" class="btn" onclick="location.href='{% url 'check_in_child' %}'">Check-in a Child</button>
+        </form>
+    </div>
+</body>
+</html>

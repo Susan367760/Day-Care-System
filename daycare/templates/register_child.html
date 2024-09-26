@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Child - Happy Kids Daycare</title>
+    {% load static %}  <!-- Load static files -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Kids Daycare - Register Your Child</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Parent Information</h2>
+            <input type="text" name="parent_first_name" placeholder="Parent First Name" required>
+            <input type="text" name="parent_last_name" placeholder="Parent Last Name" required>
+            <input type="email" name="parent_email" placeholder="Parent Email" required>
+            <input type="text" name="parent_phone_number" placeholder="Parent Phone Number" required> <!-- Updated name -->
+
+            <h2>Next of Kin Information</h2>
+            <input type="text" name="next_of_kin_name" placeholder="Next of Kin Name" required>
+            <input type="email" name="next_of_kin_email" placeholder="Next of Kin Email" required>
+            <input type="text" name="next_of_kin_phone" placeholder="Next of Kin Phone Number" required>
+
+            <h2>Child Information</h2>
+            <input type="text" name="child_first_name" placeholder="Child First Name" required>
+            <input type="text" name="child_last_name" placeholder="Child Last Name" required>
+            <input type="number" name="child_year_of_birth" placeholder="Year of Birth" required>
+
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

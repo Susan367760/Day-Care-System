@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check-in Child - Happy Kids Daycare</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Kids Daycare - Check-in Child</h1>
+        
+        {% if success %}
+            <div class="alert alert-success">
+                {{ success }}
+            </div>
+            <a href="{% url 'home' %}" class="home-button">Go Home</a> <!-- Home button -->
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="child_first_name" placeholder="Child First Name" required>
+            <input type="text" name="child_last_name" placeholder="Child Last Name" required>
+            <input type="date" name="date" required>
+
+            <button type="submit">Check-in Child</button>
+        </form>
+    </div>
+</body>
+</html>
